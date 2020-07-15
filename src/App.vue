@@ -2,16 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <FormMenu/>
+    <Contador/>
   </div>
 </template>
 
 <script>
 import FormMenu from './components/FormMenu.vue'
+import Contador from './components/Contador.vue'
 
 export default {
   name: 'App',
   components: {
-    FormMenu
+    FormMenu,
+    Contador
   }
 }
 </script>
