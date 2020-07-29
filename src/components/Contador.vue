@@ -1,7 +1,7 @@
 <template>
     <div>            
-        <button type="button" class="btn btn-primary" @click="contador" @mouseover="mous_over">Contador</button>
-        <p>Se ha hecho clic en el botón de arriba {{ conter }} veces. </p>
+        <button type="button" class="btn btn-primary" @click="contador">Contador</button>
+        <p>Se ha hecho clic en el botón de arriba {{ clicks }} veces. </p>
     </div>
     
 </template>
@@ -9,17 +9,14 @@
 <script>
 export default {
     name:'Contador',
-    data(){
-        return{
-            conter:0
-        }
+    computed: {
+      clicks() {
+        return this.$store.state.clicks
+      }
     },
-    methods:{
+    methods:{        
         contador(){
-            this.conter++;
-        },
-        mous_over(){
-            console.log("Estoy haciendo mouseover")
+            this.$store.commit('increment')
         }
     }
    
